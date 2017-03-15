@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no">
+    <title>点赞排行榜Top10</title>
+    <style>
+        @charset "UTF-8";
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            -ms-touch-action: none;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+
+        body, ul, li {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        body {
+            font-size: 12px;
+            font-family: ubuntu, helvetica, arial;
+            overflow: hidden;
+        }
+
+        #header {
+            position: absolute;
+            z-index: 12;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #f6f6f6 url(/Public/weiapi/img/Moments/topTitle3.png) center center no-repeat;
+            background-size: 208px 28px;
+            padding: 0;
+            font-size: 0;
+
+        }
+
+        #wrapper {
+            position: absolute;
+            z-index: 8;
+            top: 60px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        #scroller {
+            position: absolute;
+            z-index: 8;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            width: 100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+
+        #scroller ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            text-align: left;
+        }
+
+        #scroller li {
+            padding: 0 15px;
+            height: 72px;
+            line-height: 73px;
+            background-color: #fff;
+        }
+
+        #scroller li .userInfoContent {
+            width: 100%;
+            height: 72px;
+            overflow: hidden;
+            display: block;
+            position: relative;
+        }
+
+        #scroller li .userInfoContent:before {
+            content: " ";
+            width: 100%;
+            height: 1px;
+            background-color: #f6f6f6;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        #scroller li .userInfoContent .leftRank, #scroller li .userInfoContent img, #scroller li .userInfoContent p {
+           float: left;
+        }
+
+        #scroller li .userInfoContent .leftRank {
+            width: 40px;
+            height: 72px;
+            text-align: left;
+            font-size: 14px;
+            line-height: 73px;
+            color: #333;
+        }
+
+        #scroller li .userInfoContent .leftRank img {
+            width: 25px;
+            height: 31px;
+            margin-top: 20.5px;
+        }
+
+        #scroller li .userInfoContent img {
+            width: 48px;
+            height: 48px;
+            margin-top: 12px;
+            margin-right: 9px;
+        }
+
+        #scroller li .userInfoContent p {
+            margin: 0;
+            padding: 0;
+            height: 72px;
+        }
+
+        #scroller li .userInfoContent .rightMoney {
+            width: 90px;
+            height: 33px;
+            border-left: 1px solid #eee;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -11.5px;
+        }
+
+        #scroller li .userInfoContent .rightMoney span {
+            display: block;
+            width: 100%;
+            line-height: normal;
+            text-align: center;
+        }
+
+        #scroller li .userInfoContent .rightMoney span:nth-of-type(1) {
+            font-size: 12px;
+            color: #666;
+        }
+
+        #scroller li .userInfoContent .rightMoney span:nth-of-type(2) {
+            font-size: 14px;
+            color: #f85f73;
+        }
+
+         #scroller .loading-more {
+            padding: 15px 0 20px;
+            height: 14px;
+            margin: 0 auto;
+            text-align: center;
+            color: #777;
+            display: none;
+        }
+
+        #scroller li .userInfo {
+             display: -webkit-flex;
+             display: flex;
+             -webkit-flex-direction: row;
+             flex-direction: row;
+             justify-content: center;
+         }
+
+         .rankingNumber {
+             color: #333;
+             font-size: 16px;
+             font-weight: bold;
+         }
+    </style>
+</head>
+<body>
+<div id="header"
+     style="background: #f6f6f6 url(img/topTitle.png) center center no-repeat;background-size: 208px 28px;"></div>
+<div id="wrapper" style="overflow-y: scroll;">
+    <div id="scroller">
+        <ul id="list">
+            <li>
+                <div class="userInfoContent">
+                    <div class="leftRank"><img src="img/fitst.png" alt=""></div>
+                    <img src="img/xietx.jpg" alt="">
+                    <p class="userName">谢廷鑫</p>
+                    <div class="rightMoney"><span>贡献金额</span><span>12元</span></div>
+                </div>
+            </li>
+            <li style="height: 120px;"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
